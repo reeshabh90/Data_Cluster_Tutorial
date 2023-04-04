@@ -1,0 +1,72 @@
+Principal Component Analysis (PCA) is a statistical technique used to reduce the complexity of a dataset
+ by identifying and summarizing the most important features or components of the data. 
+The goal of PCA is to find a set of new variables, known as principal components, that can explain most of the variance in the original data.
+
+PCA involves a series of steps, which are described in detail below:
+
+Standardization: The first step in PCA is to standardize the data (i.e., scaling each feature to have zero mean and unit variance)
+ by subtracting the mean and dividing by the standard deviation. This is done to ensure that all variables have equal weight in the analysis.
+ This is necessary because PCA is sensitive to the scale of the features, and we want to give equal weight to each feature
+
+Covariance matrix calculation: Next, a covariance matrix is calculated based on the standardized data.
+ The covariance matrix provides information about the relationships between the different variables in the data.
+
+Eigen decomposition: The next step is to perform eigen decomposition on the covariance matrix.
+ This involves finding the eigenvalues and eigenvectors of the matrix.
+ The eigenvalues represent the amount of variance explained by each principal component,
+ while the eigenvectors represent the direction or orientation of the principal component.
+ The eigenvectors are sorted in descending order of their corresponding eigenvalues,
+ so that the first principal component explains the maximum amount of variance,
+ the second principal component explains the second most amount of variance, and so on.
+
+Principal component selection: The next step is to select the principal components to retain.
+ This is typically done by selecting the top k components that explain the most variance in the data.
+ The total variance explained by the selected principal components should be greater than a certain threshold (e.g., 80%).
+
+Transformation: The final step is to transform the data into the new coordinate system defined by the selected principal components.
+ This involves multiplying the original data by the eigenvectors of the selected principal components.
+We use the eigenvectors as the new axes of the low-dimensional space and project the standardized data onto these axes to obtain the new dataset.
+ This is done by multiplying the standardized data matrix by the matrix of eigenvectors.
+The resulting transformed data can be used for further analysis, such as clustering or classification.
+
+PCA has a wide range of applications, including data compression, feature extraction, and data visualization.
+ It is commonly used in fields such as finance, biology, and image processing.
+--------------------------------------------------------------------------------------------------------------------------------
+Standardization and normalization are two common data preprocessing techniques used to scale data prior to analysis.
+
+Standardization involves rescaling the data so that it has a mean of 0 and a standard deviation of 1.
+ This is done by subtracting the mean from each data point and then dividing by the standard deviation.
+ The resulting data will have a normal distribution with a mean of 0 and a standard deviation of 1.
+ Standardization is useful when the scale of the variables is important, such as in regression analysis, and when the data is normally distributed.
+
+Normalization, on the other hand, rescales the data to a fixed range, usually between 0 and 1.
+ This is done by subtracting the minimum value from each data point and then dividing by the range
+ (i.e., the difference between the maximum and minimum values). 
+The resulting data will have values between 0 and 1. 
+Normalization is useful when the absolute values of the variables are not important, such as in clustering or classification,
+ and when the data is not normally distributed.
+
+In summary, standardization rescales the data to have a mean of 0 and a standard deviation of 1,
+ while normalization rescales the data to a fixed range between 0 and 1. 
+Both techniques are useful for scaling data and reducing the impact of different scales on the analysis,
+ but the choice between them depends on the specific requirements of the analysis and the characteristics of the data.
+---------------------------------------------------------------------------------------------------------------------------------
+We have taken a sample Iris data set which is a common example undertaken for PCA study.
+After performing PCA, you can interpret the results by examining the loadings of each variable on each principal component.
+The loadings represent the correlation between each variable and each principal component.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+PCA Analysis of Data:
+PCA can be used to reduce the dimensionality of the data and identify the most important variables that explain the variation in the dataset.
+ In this case, the PCA analysis identified a single principal component that explains the majority of the variance in the data,
+ which suggests that there is a strong underlying structure or pattern in the relationships between the variables.
+
+The eigenvector corresponding to the highest eigenvalue can be used to understand the relationships between the variables and the last principal component.
+ In this case, we saw that Petal length had the highest weight, indicating that it had the strongest influence on the last principal component.
+ This suggests that Petal length may be the most important variable in distinguishing between different types of Iris flowers,
+ which is consistent with previous research on the dataset.
+
+Overall, the insights gained from a PCA analysis of the Iris dataset can be used to inform further analysis or modeling of the data,
+ or to gain a better understanding of the relationships between the variables.
+
+
