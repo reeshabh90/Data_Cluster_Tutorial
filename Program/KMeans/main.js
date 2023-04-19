@@ -8,16 +8,14 @@ const workbook = readFile('training_data.xlsx');
 const sheetName = workbook.SheetNames[0];
 const worksheet = workbook.Sheets[sheetName];
 const trainingData = utils.sheet_to_json(worksheet, { header: 1, defval: null });
-// Extract the labels and names
-trainingData[0].slice(1).filter(label => label != null); // skip the first element, which is empty
-trainingData.slice(1).map(row => row[0]);
 
 /**
  * Calculate the mean and standard deviation
  */
+// Extract the numeric data
 const numericData = trainingData.slice(1)
     .map(row => row.slice(1)
-        .filter(cell => cell !== null)).filter(row => row.length != 0); // skip the first column
+        .filter(cell => cell !== null)).filter(row => row.length != 0); 
 /**
  * Transpose training data
  */
