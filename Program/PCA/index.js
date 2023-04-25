@@ -72,6 +72,6 @@ Therefore, each row in the new matrix represents the scores of each sample
 along a particular principal component.
  */
 const principalComponents = sortedEigenvectors.slice(0, k).map((vector) => {
-    return multiply(vector, transpose(standardizedData))
+    return multiply(vector, transpose(standardizedData));
 });
 console.log(principalComponents)

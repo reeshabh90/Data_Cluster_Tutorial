@@ -1,0 +1,16 @@
+{
+  "name": "knn",
+  "version": "1.0.0",
+  "description": "Program to perform KNN algorithm on given dataset",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reeshabh C",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "xlsx": "^0.18.5"
+  }
+}
