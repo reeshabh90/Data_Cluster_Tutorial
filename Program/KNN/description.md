@@ -25,4 +25,5 @@ The resulting distances array contains an object for each point in the dataset, 
 
 Finally, we take the k nearest neighbors by slicing the array, and use them to make a prediction for the new data point.
 
+Note: The larger the value of k, the more neighbors are considered, which can lead to a smoother decision boundary but also increase the risk of overfitting. On the other hand, a smaller value of k can lead to a more complex decision boundary but also increase the risk of underfitting. Therefore, it's important to experiment with different values of k and evaluate the performance of the algorithm using a validation set or cross-validation.
 ---------------------------------------------------------------------------------------------------------
