@@ -1,6 +1,6 @@
 import pkg from 'xlsx';
 const { readFile, utils } = pkg;
-import { multiply, transpose, divide, eigs, matrix, sort, range, index } from "mathjs";
+import { multiply, transpose, divide, eigs, matrix} from "mathjs";
 import { calculateSDev, calculateMeanofColumns, getStandardizedData, transposeDatamatrix } from "./util.js";
 
 // Read Excel file with training data
@@ -55,10 +55,11 @@ const sortedIndices = findIndexSeq(eigenvalues.toArray())
 // Use the index array to sort the eigenvectors array
 const sortedEigenvectors = sortedIndices.map(i => eigenvectors.toArray()[i])
 const k = 1; // No of principal components
-console.log('Sorted Eigen Vector', sortedEigenvectors)
+//console.log('Sorted Eigen Vector', sortedEigenvectors)
 // Calculation of Principal Components:
 /**
-The reason for transposing standardized data is because the shape of the standardized data is (n x m),
+The reason for transposing standardized data is because the shape of the 
+standardized data is (n x m),
 where n is the number of samples and m is the number of features. 
 However, the eigen vectors obtained from the covariance matrix have a shape of (m x m). 
 Therefore, in order to perform the multiplication,
